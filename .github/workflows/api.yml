@@ -32,7 +32,7 @@ jobs:
     - name: Build source distribution
     #   env:
     #     TIANGOLO_BUILD_PACKAGE: ${{ matrix.package }}
-      run: python -m build --sdist
+      run: python3 -m build --sdist
     - name: Decompress source distribution
       run: |
         cd dist
@@ -40,7 +40,7 @@ jobs:
     - name: Install test dependencies
       run: |
         cd dist/fastapi*/
-        pip install -r requirements-tests.txt
+        pip3 install -r requirements-tests.txt
     #   env:
     #     TIANGOLO_BUILD_PACKAGE: ${{ matrix.package }}
     - name: Run source distribution tests
@@ -50,7 +50,7 @@ jobs:
     - name: Build wheel distribution
       run: |
         cd dist
-        pip wheel --no-deps fastapi*.tar.gz
+        pip3 wheel --no-deps fastapi*.tar.gz
     - name: Dump GitHub context
     #   env:
     #     GITHUB_CONTEXT: ${{ toJson(github) }}
