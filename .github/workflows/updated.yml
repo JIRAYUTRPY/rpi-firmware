@@ -27,6 +27,9 @@ jobs:
       run: |
         python3 -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip3 install -r requirements.txt; fi
+    - name: Install fastapi
+      run: |
+        pip3 install "fastapi[standard]"
     - name: run api
       run: |
         fastapi dev main.py
