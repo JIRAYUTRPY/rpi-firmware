@@ -27,9 +27,16 @@ jobs:
       run: |
         python3 -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip3 install -r requirements.txt; fi
-    - name: run firmware
-      run : |
-        python3 zkteco.py
+    - name: run api
+      run: |
+        fastapi dev main.py
+    - name: Run a one-line script
+      run: |
+        echo Hello raspberry!
+        ls
+    # - name: run firmware
+    #   run : |
+    #     python3 zkteco.py
     # - name: Lint with flake8
     #   run: |
     #     # stop the build if there are Python syntax errors or undefined names
