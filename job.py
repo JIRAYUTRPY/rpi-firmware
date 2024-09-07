@@ -1,2 +1,5 @@
-while True:
-    execfile('zkteco.py')
+
+from firmware import main
+
+
+main()
